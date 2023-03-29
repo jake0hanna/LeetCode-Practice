@@ -1,5 +1,5 @@
 
-public class main 
+public class main
 {
     public static void main(String[] args) 
     {
@@ -7,6 +7,114 @@ public class main
         
     
     }
+
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     int val;
+ *     ListNode next;
+ *     ListNode() {}
+ *     ListNode(int val) { this.val = val; }
+ *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+ * }
+ */
+public ListNode middleNode(ListNode head) 
+{
+    //876
+    //I feel like it should need a +1 after the size/2 to account for rounding, but it works without.
+
+    ListNode nextNode = head;
+    int size = 0; 
+
+
+    while(nextNode != null)
+    {
+        size++;
+
+        nextNode = nextNode.next;
+
+    }
+
+    nextNode = head;
+    size = (size/2);
+
+    while(size > 0)
+    {
+        nextNode = nextNode.next;
+
+        size--;
+
+    }
+    return nextNode;
+
+    public ListNode reverseList(ListNode head) 
+    {
+
+        //206, probably the dumbest thing ever
+
+        ListNode currentNode = head, 
+                previousNode = null,
+                nextNode = null;
+
+        
+        while(currentNode != null)
+        {
+
+            nextNode = currentNode.next; 
+            currentNode.next = previousNode;
+            previousNode = currentNode;
+            currentNode = nextNode;
+            
+
+        }
+        return previousNode;
+
+        
+    }
+
+    public ListNode mergeTwoLists(ListNode list1, ListNode list2) 
+    {
+
+        /*
+            21 - needed help
+
+
+            Check if current lists are null
+            if not null, 
+                recursively merge the lower valued lists.next with the other current index
+                return original instance of lower valued lists.next
+            if either list is null, return the other 
+
+        */
+       
+        if(list1!=null && list2!=null)
+        {
+
+            if(list1.val<list2.val)
+            {
+                list1.next = mergeTwoLists(list1.next,list2);
+                return list1;
+
+            }
+            else
+            {
+                list2.next = mergeTwoLists(list2.next,list1);
+                return list2;
+
+            }
+
+        }
+        if(list1==null)
+        {
+            return list2;
+        }
+        return list1;
+        
+
+        
+    }
+    
+
 
     public int[] runningSum(int[] nums)
     {
