@@ -3,7 +3,6 @@ class StackFrom2Queues
     Queue<Integer> mainQueue, 
           orgQueue;
     int size;
-
     public MyStack() 
     {
 
