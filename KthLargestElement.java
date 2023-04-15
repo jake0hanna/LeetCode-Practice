@@ -40,7 +40,7 @@ public class KthLargestElement
     }
 
 }
-   /*   TOO SLOW
+   /*   TOO SLOW - BETTER IMPLEMENTATION IF YOU NEEDED TO KEEP ALL THE NUMBERS
 
     List<Integer> numbers;
     int k;
