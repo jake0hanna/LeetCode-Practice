@@ -21,9 +21,15 @@ class MaxDepthBST
 
         if(root != null)
         {
+            //Recursively traverse the whole tree,
              
             int left = maxDepth(root.left);
             int right = maxDepth(root.right);
+
+
+            //If either is null, return zero
+            
+            //For each depth will add one and return to the previous call and repeat to the top
 
             return Math.max(left, right) + 1;
 
