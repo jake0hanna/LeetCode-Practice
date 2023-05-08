@@ -26,8 +26,10 @@ class Solution
 
 
         result = Arrays.stream(convertedArray)
-                       .sorted(new Comparator<String>() {
-                                    public int compare(String a, String b) {
+                       .sorted(new Comparator<String>() 
+                       {
+                                    public int compare(String a, String b) 
+                                    {
                                         String order1 = a + b;
                                         String order2 = b + a;
                                         return order2.compareTo(order1);
