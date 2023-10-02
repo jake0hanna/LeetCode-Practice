@@ -20,7 +20,8 @@ class Solution
                     list.clear();
                     list.add(Arrays.asList(arr[i], arr[j]));
                 } 
-                else if (difference == lowestDif) {
+                else if (difference == lowestDif) 
+                {
                     list.add(Arrays.asList(arr[i], arr[j]));
                 }
             }
